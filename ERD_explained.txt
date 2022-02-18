@@ -1,23 +1,25 @@
 
 Games:
 
-this table reprents all games available in the gameshop, this data has the name, genre and price of the game relaterd with the publisher.
+this table reprents all games available in the gameshop, this data has the name, platform and price of the game relaterd with the publisher.
 
 game_inventory:
 this is the data that keeps track of the inventory of all the games available
 
 
 game_company:
-game company is the publisher of the game. it has the company name, location.
+game company is the publisher of the game. it has the company name.
 
-
+game_platform:
+this is the type mof platform the game is played on because the same game can be played on different platforms
+                                                                                                                                                                                      
 orderitems:
 
 this has the order details of each selected item, it has the game id,with price and quantity
 
 orders:
 
-an order can have many order items, then puts all of them together as an order once confirmed with an order date and to which customer it is following customer_id.
+an order can have many order items, then puts all of them together as an order once confirmed with an order date, total price and to which customer it is following customer_id.
 
 
 customers:
@@ -33,7 +35,7 @@ Games:
 game_id(pk,fk)
 companyid (fk)
 game_name
-game_genre
+game_platform(fk)
 game_price
 
 game_inventory:
@@ -45,7 +47,12 @@ game_company:
 
 company_id(pk)
 company_name
-company_location
+
+
+game_platforme:
+
+platform_id (pk)
+platform_name
 
 orderitems:
 
@@ -60,6 +67,7 @@ order_id(pk)
 customer_id(fk)
 order_date
 order_itemsid(fk)
+order_total_price
 
 
 customers:
