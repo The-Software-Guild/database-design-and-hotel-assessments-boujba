@@ -1,0 +1,77 @@
+
+Games:
+
+this table reprents all games available in the gameshop, this data has the name, genre and price of the game relaterd with the publisher.
+
+game_inventory:
+this is the data that keeps track of the inventory of all the games available
+
+
+game_company:
+game company is the publisher of the game. it has the company name, location.
+
+
+orderitems:
+
+this has the order details of each selected item, it has the game id,with price and quantity
+
+orders:
+
+an order can have many order items, then puts all of them together as an order once confirmed with an order date and to which customer it is following customer_id.
+
+
+customers:
+
+this has the customers information needed to ship the orders, it has cuntomer name lastname and address/phone numbere
+
+shipments:
+
+this is all the information needed to ship the order, it has the order_id with  destination and will be shipped following th shipment_date
+
+Games:
+
+game_id(pk,fk)
+companyid (fk)
+game_name
+game_genre
+game_price
+
+game_inventory:
+
+game_id(pk)
+stock_level
+
+game_company:
+
+company_id(pk)
+company_name
+company_location
+
+orderitems:
+
+order_itemsid(pk)
+game_id(fk)
+order_price
+order_quantity
+
+orders:
+
+order_id(pk)
+customer_id(fk)
+order_date
+order_itemsid(fk)
+
+
+customers:
+
+customer_id (pk)
+customer_firstname
+customer_lastname
+customer_address
+customer_phonenumber
+
+shipments:
+
+shipment_id(pk)
+order_id(fk)
+shipment_date
